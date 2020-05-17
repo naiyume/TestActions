@@ -33,5 +33,5 @@ jobs:
         echo test, and deploy your project.
         
     #Sees where I am
-    - name: See where I am
-      run: ls
+    - name: See what changed
+      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | test.js
