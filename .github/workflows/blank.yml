@@ -31,7 +31,8 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+        git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
         
     #Sees where I am
     - name: See what changed
-      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | node test.js
+      run: echo testabc | node test.js
