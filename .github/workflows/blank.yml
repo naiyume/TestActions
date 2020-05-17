@@ -34,4 +34,4 @@ jobs:
         
     #Sees where I am
     - name: See what changed
-      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | test.js
+      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | node test.js
