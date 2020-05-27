@@ -26,7 +26,6 @@ jobs:
       uses: lots0logs/gh-action-get-changed-files@2.0.5
       with:
         token: ${{secrets.GITHUB_TOKEN}}
-        owner: naiyume
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
