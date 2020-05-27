@@ -22,6 +22,11 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@master
     
+    - name: Get Changed Files
+      uses: lots0logs/gh-action-get-changed-files@2.0.6
+      with:
+        token: ${{secrets.GITHUB_TOKEN}}
+
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: git diff-tree --name-only -r ${{ github.sha }}
