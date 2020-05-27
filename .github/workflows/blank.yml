@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@master
     
     - name: Get Changed Files
-      uses: lots0logs/gh-action-get-changed-files@2.0.6
+      uses: lots0logs/gh-action-get-changed-files@2.0.5
       with:
         token: ${{secrets.GITHUB_TOKEN}}
         owner: naiyume
