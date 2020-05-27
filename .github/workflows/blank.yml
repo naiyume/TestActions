@@ -36,11 +36,11 @@ jobs:
 
     #Sees where I am
     - name: See what changed
-      run: ls
+      run: node concept.js
 
     - uses: EndBug/add-and-commit@v4
       with:
         add: '.'
-        commit: 'test commit 123'
+        commit: 'commit JSON files'
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
