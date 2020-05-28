@@ -29,7 +29,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+      run: git diff-tree --no-commit-id --name-only -r f3363ff3a1402bc1539bfc490181dc761a9a262c
 
     #Sees where I am
     - name: See what changed
