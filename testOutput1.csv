@@ -1,5 +1,5 @@
 ,conceptId,Primary Source,conceptId,Secondary Source,conceptId,Question Text,Variable Label,Variable Name,Variable Type,Variable Length,Required,PII,conceptId,Response Label (select as many as apply questions only),Response Variable Name (select as many as apply questions only),conceptId,Format/Value
-,858471590,Recruitment,516195647,Eligibility Screener,989750243,How did you hear about this study?,Study awareness,RcrtES_Aware_v1r0,Num,1,No,No,348672211,Physician or other medical staff,RcrtES_Aware_v1r0_phys,835324528,0=No
+,858471590,Recruitment,516195647,Eligibility Screener,001174431,How did you hear about this study?,Study awareness,RcrtES_Aware_v1r0,Num,1,No,No,348672211,Physician or other medical staff,RcrtES_Aware_v1r0_phys,835324528,0=No
 ,,,,,,,,,,,,,806997259,Email or text from my healthcare provider,RcrtES_Aware_v1r0_Email,489559016,1=Yes
 ,,,,,,,,,,,,,823133448,Postcard or mail,RcrtES_Aware_v1r0_Post,,
 ,,,,,,,,,,,,,540799915,News article or website,RcrtES_Aware_v1r0_News,,
