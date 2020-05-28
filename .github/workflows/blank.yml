@@ -31,6 +31,15 @@ jobs:
     - name: Run git version
       run: git --version
 
+    - name: get changed files
+      id: getfile
+      run: |
+        echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
+
+    - name: echo output
+      run: |
+        echo ${{ steps.getfile.outputs.files }}
+
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
