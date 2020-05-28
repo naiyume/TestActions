@@ -29,18 +29,15 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: git diff-tree --name-only -r ${{ github.sha }}
-        
-    - name: create test file
-      run: echo 'abc' > testing123.txt
+      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
 
     #Sees where I am
     - name: See what changed
       run: node concept.js
 
-    - uses: EndBug/add-and-commit@v4
-      with:
-        add: '.'
-        commit: 'commit JSON files'
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    #- uses: EndBug/add-and-commit@v4
+    #  with:
+    #    add: '.'
+    #    commit: 'commit JSON files'
+    #  env:
+    #    GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
