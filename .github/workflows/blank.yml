@@ -30,10 +30,10 @@ jobs:
 
     - name: test
       run: |
-        cat $HOME/files.csv
+        cat $HOME/files.csv > files.csv
 
     - name: running index file
-      run: ls
+      run: node index.js
 
     #- uses: EndBug/add-and-commit@v4
     #  with:
