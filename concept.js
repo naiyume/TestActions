@@ -542,4 +542,7 @@ async function readFile(fileName){
     fs.writeFileSync(fileName, toPrint)
     
 }
-readFile('testOutput1.csv');
+
+module.exports = {
+    readFile:readFile
+}

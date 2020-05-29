@@ -27,35 +27,13 @@ jobs:
       with:
         output: ','
         fileOutput: ','
+        
     - name: test
       run: |
         cat $HOME/files.csv
-    
-    - name: Get Changed Files
-      uses: lots0logs/gh-action-get-changed-files@2.0.6
-      with:
-        token: ${{secrets.GITHUB_TOKEN}}
 
-    # Runs a single command using the runners shell
-    - name: Run git version
-      run: git --version
-
-    - name: get changed files
-      id: getfile
-      run: |
-        echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
-
-    - name: echo output
-      run: |
-        echo ${{ steps.getfile.outputs.files }}
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-
-    #Sees where I am
-    - name: See what changed
-      run: node concept.js
+    - name: running index file
+      run: node index.js
 
     #- uses: EndBug/add-and-commit@v4
     #  with:
