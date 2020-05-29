@@ -8,7 +8,7 @@ console.log(files)
 for(let i = 0; i < files.length; i++){
     let file = files[i]
     if(file.indexOf('.csv') != -1){
-        concept.readFile('file')
+        concept.readFile(file)
         i = files.length;
     }
     else if(file.indexOf('.json') != -1){
