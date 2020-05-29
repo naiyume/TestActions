@@ -1,12 +1,12 @@
-,Primary Source,Secondary Source,Question Text,Variable Label,Variable Name,Variable Type,Variable Length,Required,PII,Response Label (select as many as apply questions only),Response Variable Name (select as many as apply questions only),Format/Value
-,Recruitment,Eligibility Screener,How did you hear about this study?,Study awareness,RcrtES_Aware_v1r0,Num,1,No,No,Physician or other medical staff,RcrtES_Aware_v1r0_phys,0=No
-,,,,,,,,,,Email or text from my healthcare provider,RcrtES_Aware_v1r0_Email,1=Yes
-,,,,,,,,,,Postcard or mail,RcrtES_Aware_v1r0_Post,
-,,,,,,,,,,News article or website,RcrtES_Aware_v1r0_News,
-,,,,,,,,,,Social media,RcrtES_Aware_v1r0_Social,
-,,,,,,,,,,MyChart invitation,RcrtES_Aware_v1r0_Invite,
-,,,,,,,,,,Family or friend,RcrtES_Aware_v1r0_Family,
-,,,,,,,,,,Another Connect participant,RcrtES_Aware_v1r0_Member,
-,,,,,,,,,,"Poster, brochure, or flyer",RcrtES_Aware_v1r0_Poster,
-,,,,,,,,,,Study table at public event,RcrtES_Aware_v1r0_Table,
-,,,,,,,,,,Other,RcrtES_Aware_v1r0_Other,
+,conceptId,Primary Source,conceptId,Secondary Source,conceptId,Question Text,Variable Label,Variable Name,Variable Type,Variable Length,Required,PII,conceptId,Response Label (select as many as apply questions only),Response Variable Name (select as many as apply questions only),conceptId,Format/Value
+,003013461,Recruitment,349429531,Eligibility Screener,690802940,How did you hear about this study?,Study awareness,RcrtES_Aware_v1r0,Num,1,No,No,956839738,Physician or other medical staff,RcrtES_Aware_v1r0_phys,842812203,0=No
+,,,,,,,,,,,,,528696583,Email or text from my healthcare provider,RcrtES_Aware_v1r0_Email,267219507,1=Yes
+,,,,,,,,,,,,,927309795,Postcard or mail,RcrtES_Aware_v1r0_Post,,
+,,,,,,,,,,,,,818169521,News article or website,RcrtES_Aware_v1r0_News,,
+,,,,,,,,,,,,,443630995,Social media,RcrtES_Aware_v1r0_Social,,
+,,,,,,,,,,,,,480460225,MyChart invitation,RcrtES_Aware_v1r0_Invite,,
+,,,,,,,,,,,,,705385930,Family or friend,RcrtES_Aware_v1r0_Family,,
+,,,,,,,,,,,,,072466561,Another Connect participant,RcrtES_Aware_v1r0_Member,,
+,,,,,,,,,,,,,879118369,"Poster, brochure, or flyer",RcrtES_Aware_v1r0_Poster,,
+,,,,,,,,,,,,,149770647,Study table at public event,RcrtES_Aware_v1r0_Table,,
+,,,,,,,,,,,,,138862202,Other,RcrtES_Aware_v1r0_Other,,
