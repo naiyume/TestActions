@@ -35,9 +35,9 @@ jobs:
     - name: running index file
       run: node index.js
 
-    #- uses: EndBug/add-and-commit@v4
-    #  with:
-    #    add: '.'
-    #    commit: 'commit JSON files'
-    #  env:
-    #    GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - uses: EndBug/add-and-commit@v4
+      with:
+        add: '.'
+        commit: 'commit JSON files'
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
