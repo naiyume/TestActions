@@ -1,7 +1,7 @@
 const concept = require('./concept');
 const fs = require('fs');
 const otherDirection = require('./otherDirection');
-let files = fs.readFileSync('files.csv')
+let files = fs.readFileSync('files.csv', {encoding:'utf8'})
 console.log(files)
 /*
 for(let i = 0; i < files.length; i++){
