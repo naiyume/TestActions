@@ -402,5 +402,5 @@ function recurseRead(curr,final, key, conceptSeen, isSource){
 }
 
 module.exports = {
-    reverseRead = reverseRead
+    reverseRead: reverseRead
 }
