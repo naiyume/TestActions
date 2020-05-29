@@ -1,13 +1,13 @@
 const concept = require('./concept');
 const fs = require('fs');
 const otherDirection = require('./otherDirection');
-let files = fs.readFileSync('files.csv')
+let files = fs.readFileSync('files.csv').split(',')
 for(let i = 0; i < files.length; i++){
     let file = files[i]
-    if(file.includes('.csv')){
+    if(file.indexOf('.csv') != -1){
         concept.readFile('file')
     }
-    else if(file.includes('.json')){
+    else if(file.indexOf('.json') != -1){
         otherDirection.reverseRead()
     }
     i = files.length;
