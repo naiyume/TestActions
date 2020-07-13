@@ -34,6 +34,7 @@ function reverseRead(){
     
     let referenced = [];
     let clean = [];
+    let cleancheck = [];
     for(let i = 0; i < jsonList.length; i++){
         let currFile = jsonList[i];
         let keys = Object.keys(currFile);
@@ -42,6 +43,7 @@ function reverseRead(){
             if(keys[j].includes('Source')){
                 if(!clean.includes(i)){
                     clean.push(i)
+                    cleancheck.push(i)
                 }
             }
             if(Array.isArray(nextObj)){
@@ -92,14 +94,22 @@ function reverseRead(){
             }
         }
     }
-    for(let i = 0; i < jsonList.length; i++){
-        if(!referenced.includes(i)){
-            if(!clean.includes(i)){
-                clean.push(i)
-            }
+
+    let cIds = [];
+    for(let i = 0; i < referenced.length; i++){
+        if(!cIds.includes(jsonList[referenced[i]]['conceptId'])){
+            cIds.push(jsonList[referenced[i]]['conceptId'])
         }
     }
-
+    
+    for(let i = 0; i < jsonList.length; i++){
+        if(!cIds.includes(jsonList[i]['conceptId'])){
+            if(!clean.includes(i)){
+                clean.push(i);
+            }
+        }
+       
+    }
 
     let finalMatrix = []
     let finalHeader = []
@@ -253,14 +263,10 @@ function reverseRead(){
     }    
         
     
-
-
     fs.writeFileSync('testOutput1.csv', toExcel)
-    console.log(finalMatrix)
-    
-    //console.log(toExcel)
-    //console.log(finalConcepts)
+
 }
+
 
 function recurseRead(curr,final, key, conceptSeen, isSource){
     let keys = Object.keys(curr)
@@ -386,8 +392,8 @@ function recurseRead(curr,final, key, conceptSeen, isSource){
                     
                     for(let k = 0; k < kList.length; k++){
 
-                        if(nextObj[kList[k]].hasOwnProperty('variableName') && !nextObj[kList[k]]['variableName'].includes('=')){
-                            nextObj[kList[k]]['variableName'] = kList[k] + '=' + nextObj[kList[k]]['variableName']
+                        if(nextObj[kList[k]].hasOwnProperty('Variable Name') && !nextObj[kList[k]]['Variable Name'].includes('=')){
+                            nextObj[kList[k]]['Variable Name'] = kList[k] + '=' + nextObj[kList[k]]['Variable Name']
                         }
                         recurseRead(nextObj[kList[k]], final, keys[j], conceptSeen)
                     }
@@ -400,6 +406,7 @@ function recurseRead(curr,final, key, conceptSeen, isSource){
     //console.log(toPrint)
 
 }
+
 
 module.exports = {
     reverseRead: reverseRead
