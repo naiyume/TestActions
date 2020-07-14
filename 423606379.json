@@ -1,0 +1,1 @@
+{"Primary Source":"873865433.json","Secondary Source":"469395583.json","conceptId":"423606379","Question Text":"Kaiser Medical Record Number, use this form of the variable if RcrtES_Site_v1r0 = 4","Variable Label":"KPMRN Hawii","Variable Name":"RCRTUP_KPMRN_HI_V1R0","Variable Type":"Char","Variable Length":"9","Format/Value":"N/A","Required":"No","PII":"Yes"}
