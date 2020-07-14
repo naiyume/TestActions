@@ -1,1 +1,0 @@
-{"Primary Source":"010115297.json","Secondary Source":"656516722.json","Question Text":"Witness First Name extracted from consent form","Variable Label":"Witness First Name","Variable Name":"RcrtCS_WFname_v1r0","Variable Type":"Char","Variable Length":"50","Format/Value":"N/A","Required":" Yes - if RcrtCS_Version_v1r0 = 2","PII":"Yes","conceptId":"534925850"}
