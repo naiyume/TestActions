@@ -35,9 +35,12 @@ jobs:
     - name: running index file
       run: node index.js
 
+    - name: delete files file
+      run: rm files.csv
+
     - uses: EndBug/add-and-commit@v4
       with:
         add: '.'
-        commit: 'commit JSON files'
+        commit: 'commit JSON/csv files'
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
