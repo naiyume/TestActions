@@ -538,12 +538,10 @@ async function readFile(fileName){
             }
         }
     }
-    fs.writeFileSync('testing.csv', toPrint)
+    fs.writeFileSync(fileName, toPrint)
     
 }
 
 module.exports = {
     readFile:readFile
 }
-
-readFile('prelim.csv')
