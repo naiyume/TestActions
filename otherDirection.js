@@ -418,5 +418,3 @@ function recurseRead(curr,final, key, conceptSeen, /*isSource,*/ depth){
 module.exports = {
     reverseRead: reverseRead
 }
-
-reverseRead()
