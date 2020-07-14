@@ -1,0 +1,1 @@
+{"Primary Source":"979753224.json","Secondary Source":"577695223.json","Question Text":"Kaiser Medical Record Number, use this form of the variable if RcrtES_Site_v1r0 =3","Variable Label":"KPMRN Georgia","Variable Name":"RCRTUP_KPMRN_GA_V1R0","Variable Type":"Char","Variable Length":"7","Format/Value":"N/A","Required":"No","PII":"Yes","conceptId":"417804755"}

@@ -1,0 +1,1 @@
+{"Primary Source":"979753224.json","Secondary Source":"577695223.json","Question Text":"Kaiser Medical Record Number, use this form of the variable if RcrtES_Site_v1r0 = 5","Variable Label":"KPMRN Northwest","Variable Name":"RcrtUP_KPMRN_NW_V1R0","Variable Type":"Char","Variable Length":"8","Format/Value":"N/A","Required":"No","PII":"Yes","conceptId":"904963478"}
