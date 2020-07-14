@@ -1,1 +1,0 @@
-{"Primary Source":"855901710.json","Secondary Source":"577695223.json","Question Text":"What year were you diagnosed?","Variable Label":"Cancer Year","Variable Name":"RCRTUP_CANCERYR_V1R0","Variable Type":"Year","Variable Length":"4","Format/Value":"yyyy","Required":"No","PII":"No","Questions/Notes":"Only shown if answer to RCRTUP_CANCER_V1R0 = 1","conceptId":"075875789"}

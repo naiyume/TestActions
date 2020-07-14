@@ -31,7 +31,7 @@ function generateRandomUUID(conceptIdList){
     }
 }
 
-function processCluster(cluster, header, nameToConcept, indexVariableName, conceptIdList, conceptIdObject, sourceJSONS){
+function processCluster(cluster, header, nameToConcept, indexVariableName, conceptIdList, conceptIdObject, sourceJSONS, jsonList){
     let nonEmpty = [];
     let list = [1,2,3]
     let conceptIdObjectKeys =Object.keys(conceptIdObject)
@@ -58,7 +58,7 @@ function processCluster(cluster, header, nameToConcept, indexVariableName, conce
     let firstRow = cluster[0]
     let clump = [];
     for(let i = 0; i < firstRow.length; i++){
-        if(firstRow[i] != "" && !nonEmpty.includes(i) && !conceptIdIndices.includes(i)){
+        if(firstRow[i] != "" && !nonEmpty.includes(i) || (conceptIdIndices.includes(i) && conceptIdObject[i] =="thisRowId")){
             firstRowJSON[header[i]] = firstRow[i]
         }
     }
@@ -165,7 +165,7 @@ function processCluster(cluster, header, nameToConcept, indexVariableName, conce
                 }
                 
                 //fs.writeFileSync(cid + '.json', JSON.stringify({'conceptId':cid, 'variableName':val}));
-                jsonList.push({'conceptId':cid, 'variableName':val})
+                jsonList.push({'conceptId':cid, 'Variable Name':val})
                 fs.writeFileSync(cid + '.json', JSON.stringify({'conceptId':cid, 'variableName':val}))
                 nameToConcept[val] = cid
                 
@@ -328,7 +328,7 @@ async function getConceptIds(fileName){
     let conceptIdIndices = []
     let leftMost = []
     let firstNotSource = -1;
-    let leftMostStart = 0;
+    let leftMostStart = -1;
 
     for await(const line of rl){
         let arr = CSVToArray(line, ',')
@@ -364,7 +364,6 @@ async function getConceptIds(fileName){
             }
             else{
                 lookForConcepts(cluster, header, idsToInsert, leftMost)
-                cluster = [arr]
             }
         }
         else{
@@ -500,7 +499,7 @@ async function readFile(fileName){
                 cluster.push(arr);
             }
             else{
-                let returned = processCluster(cluster, header, nameToConcept, varLabelIndex, conceptIdList, conceptIdObject, sourceJSONS)
+                let returned = processCluster(cluster, header, nameToConcept, varLabelIndex, conceptIdList, conceptIdObject, sourceJSONS, jsonList)
                 excelOutput.push(returned)
                 cluster = [arr]
                 currCluster = true;
@@ -511,9 +510,10 @@ async function readFile(fileName){
             currCluster = true;
         }
     }
-    let returned = processCluster(cluster, header, nameToConcept, varLabelIndex, conceptIdList, conceptIdObject, sourceJSONS);
+    let returned = processCluster(cluster, header, nameToConcept, varLabelIndex, conceptIdList, conceptIdObject, sourceJSONS, jsonList);
     excelOutput.push(returned)
     for(let i = 0; i < sourceJSONS.length; i++){
+        jsonList.push(sourceJSONS[i])
         fs.writeFileSync(sourceJSONS[i]['conceptId'] + '.json', JSON.stringify(sourceJSONS[i]));
     }
     fs.writeFileSync('varToConcept.json', JSON.stringify(nameToConcept))
@@ -538,11 +538,12 @@ async function readFile(fileName){
             }
         }
     }
-    
-    fs.writeFileSync(fileName, toPrint)
+    fs.writeFileSync('testing.csv', toPrint)
     
 }
 
 module.exports = {
     readFile:readFile
 }
+
+readFile('prelim.csv')
