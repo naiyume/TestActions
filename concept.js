@@ -166,7 +166,7 @@ function processCluster(cluster, header, nameToConcept, indexVariableName, conce
                 
                 //fs.writeFileSync(cid + '.json', JSON.stringify({'conceptId':cid, 'variableName':val}));
                 jsonList.push({'conceptId':cid, 'Variable Name':val})
-                fs.writeFileSync(cid + '.json', JSON.stringify({'conceptId':cid, 'variableName':val}))
+                fs.writeFileSync('./jsons/' + cid + '.json', JSON.stringify({'conceptId':cid, 'variableName':val}))
                 nameToConcept[val] = cid
                 
                 if(!conceptIdList.includes(cid)){
@@ -226,7 +226,7 @@ function processCluster(cluster, header, nameToConcept, indexVariableName, conce
             currCollection[header[leafIndex]] = leafObj;
             //fs.writeFileSync(currCollection['conceptId']+ '.json', JSON.stringify(currCollection));
             jsonList.push(currCollection)
-            fs.writeFileSync(currCollection['conceptId'] + '.json', JSON.stringify(currCollection))
+            fs.writeFileSync('./jsons/' + currCollection['conceptId'] + '.json', JSON.stringify(currCollection))
 
         }
     }
@@ -244,7 +244,7 @@ function processCluster(cluster, header, nameToConcept, indexVariableName, conce
         nameToConcept[firstRowJSON[header[indexVariableName]]] = firstRowJSON['conceptId']
     }
     jsonList.push(firstRowJSON);
-    fs.writeFileSync(firstRowJSON['conceptId'] + '.json', JSON.stringify(firstRowJSON))
+    fs.writeFileSync('./jsons/' + firstRowJSON['conceptId'] + '.json', JSON.stringify(firstRowJSON))
     return cluster;
 
 }
@@ -458,11 +458,11 @@ async function readFile(fileName){
     let jsonList = []
     let sourceJSONS = []
     let ConceptIndex = '{}'
-    if(fs.existsSync('varToConcept.json')){
+    if(fs.existsSync('./jsons/varToConcept.json')){
         ConceptIndex = fs.readFileSync('varToConcept.json', {encoding:'utf8'})
     }
     let idIndex = '[]'
-    if(fs.existsSync('conceptIds.txt')){
+    if(fs.existsSync('./jsons/conceptIds.txt')){
         idIndex = fs.readFileSync('conceptIds.txt', {encoding:'utf8'})
     }
     let conceptIdList = JSON.parse(idIndex)
@@ -514,10 +514,10 @@ async function readFile(fileName){
     excelOutput.push(returned)
     for(let i = 0; i < sourceJSONS.length; i++){
         jsonList.push(sourceJSONS[i])
-        fs.writeFileSync(sourceJSONS[i]['conceptId'] + '.json', JSON.stringify(sourceJSONS[i]));
+        fs.writeFileSync('./jsons/' + sourceJSONS[i]['conceptId'] + '.json', JSON.stringify(sourceJSONS[i]));
     }
-    fs.writeFileSync('varToConcept.json', JSON.stringify(nameToConcept))
-    fs.writeFileSync('conceptIds.txt', JSON.stringify(conceptIdList))
+    fs.writeFileSync('./jsons/varToConcept.json', JSON.stringify(nameToConcept))
+    fs.writeFileSync('./jsons/conceptIds.txt', JSON.stringify(conceptIdList))
     rl.close();
     fileStream.close();
     let toPrint = '';

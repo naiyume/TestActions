@@ -1,7 +1,7 @@
 const fs = require('fs');
 function getFiles(){
     let fileList = [];
-    files = fs.readdirSync('.');
+    files = fs.readdirSync('./jsons');
     files.forEach(function(file) {
         if(file.match(/[0-9]{9}.json/) != null){
         fileList.push(file);
@@ -26,7 +26,7 @@ function reverseRead(){
     let jsonIndex = {}
     for(let i = 0; i < fileList.length; i++){
         let currFile = fileList[i];
-        let currFileContents = fs.readFileSync(currFile );
+        let currFileContents = fs.readFileSync('./jsons/' + currFile );
         let currJSON = JSON.parse(currFileContents)
         jsonList.push(currJSON)
         jsonIndex[currJSON['conceptId']] = i
@@ -263,7 +263,7 @@ function reverseRead(){
     }    
         
     
-    fs.writeFileSync('testOutput1.csv', toExcel)
+    fs.writeFileSync('./csv/testOutput1.csv', toExcel)
 
 }
 
